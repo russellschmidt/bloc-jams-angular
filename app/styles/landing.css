@@ -55,9 +55,5 @@ body.landing {
 }
 
 #logo-image:hover {
-  -webkit-transition: left 2s, linear;
-  -moz-transition: left 2s, linear;
-  transition: left 2s, linear;
-  left: 100px;
-
+  
 }
