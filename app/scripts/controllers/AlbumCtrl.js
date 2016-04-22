@@ -1,11 +1,12 @@
 (function() {
-  function AlbumCtrl(Fixtures){
+  function AlbumCtrl(Fixtures) {
     this.albumData = Fixtures.getAlbum();
-    //console.log(this.albumData);
     this.albumSongs = [];
-
+    
+    console.log(this.albumData)
+    
     for (var i = 0; i < this.albumData.songs.length; i++) {
-      this.albumSongs.push(angular.copy(albumPicasso.songs[i]));
+      this.albumSongs.push(angular.copy(this.albumData.songs[i]));
       this.albumSongs[i].duration = Math.floor(this.albumSongs[i].duration/60) + ":" +
         Math.floor(this.albumSongs[i].duration%60);
     }
