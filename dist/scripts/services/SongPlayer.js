@@ -96,9 +96,13 @@
         playSong(song);
       } else if (SongPlayer.currentSong === song) {
       // otherwise check to see if the song is paused and play
-        if (currentBuzzObject.isPaused()) {
+        if (currentBuzzObject === null) {
+          song = currentAlbum.songs[0];
+          setSong(song);
           playSong(song);
-        }
+        } else if (currentBuzzObject.isPaused()) {
+          playSong(song);
+        } 
       }
     };
     
