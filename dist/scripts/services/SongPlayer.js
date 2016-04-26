@@ -68,7 +68,7 @@
  */  
     var stopSong = function(song) {
       currentBuzzObject.stop();
-      song.playing = null;
+      SongPlayer.currentSong.playing = null;
     }
     
 /**
@@ -152,6 +152,7 @@
   
 /**
  * @function .next
+ 
  * @desc Changes currently playing song to the next (currentSong + 1) song
  * @param {Object} song
  */
