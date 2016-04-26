@@ -56,6 +56,7 @@
           notifyOnChange(scope.value);
 
         };
+          
         
         scope.trackThumb = function() {
           $document.bind('mousemove.thumb', function(event) {
