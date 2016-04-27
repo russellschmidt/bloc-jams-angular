@@ -21,7 +21,7 @@
         
         // directive logic to return
         scope.value = 0;
-        scope.max = 100;
+        scope.max = 100;  //set to 100 for volume, which is 0-100
         
         var seekBar = $(element);
               
