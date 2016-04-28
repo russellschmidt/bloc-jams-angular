@@ -4,6 +4,8 @@
       
       var seconds = Number.parseFloat(seconds);
       
+      console.log()
+      
       if (Number.isNaN(seconds)) {
         return "-:--";    
       }
