@@ -165,6 +165,25 @@
   margin-left: -0.5rem;
 }
 
+span.icon.ion-volume-mute {
+  cursor: pointer;
+  -webkit-transition: font-size 100ms ease-in-out,
+                      margin-top 100ms ease-in-out,
+                      margin-left 100ms ease-in-out;
+  -moz-transition:  font-size 100ms ease-in-out,
+                    margin-top 100ms ease-in-out,
+                    margin-left 100ms ease-in-out;
+  transition: font-size 100ms ease-in-out,
+              margin-top 100ms ease-in-out,
+              margin-left 100ms ease-in-out;
+}
+
+span.icon.ion-volume-mute:hover {
+  font-size: 1.5em;
+  margin-top: -0.7em;
+  margin-left: -0.7em;
+}
+
 /* 
  ******** MOBILE ********
  */

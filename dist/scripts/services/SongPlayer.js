@@ -215,12 +215,13 @@
       if (volume > 0) {
         SongPlayer.preMuteVolume = volume;
         if (currentBuzzObject) {
+          SongPlayer.volume = 0;
           currentBuzzObject.setVolume(0);
         }
       } else if (volume == 0) {
-        volume = SongPlayer.preMuteVolume;
+        SongPlayer.volume = SongPlayer.preMuteVolume;
         if (currentBuzzObject) {
-          currentBuzzObject.setVolume(0);
+          currentBuzzObject.setVolume(SongPlayer.volume);
         }
       }
     }
