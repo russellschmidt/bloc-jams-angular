@@ -33,6 +33,10 @@
       currentBuzzObject.bind('timeupdate', function() {
         $rootScope.$apply(function() {
           SongPlayer.currentTime = currentBuzzObject.getTime();
+          
+          if (SongPlayer.currentTime >= currentBuzzObject.getDuration()){
+            SongPlayer.next();
+          }
         });
       });
       
