@@ -33,6 +33,10 @@
       currentBuzzObject.bind('timeupdate', function() {
         $rootScope.$apply(function() {
           SongPlayer.currentTime = currentBuzzObject.getTime();
+          
+          if (SongPlayer.currentTime >= currentBuzzObject.getDuration()){
+            SongPlayer.next();
+          }
         });
       });
       
@@ -88,6 +92,12 @@
  *  @type {Number}
  */
     SongPlayer.volume = 33;
+    
+/**
+ *  @desc Placeholder for volume in number 0-100 to hold value for mute toggle
+ *  @type {Number}
+ */  
+    SongPlayer.preMuteVolume = 33;
     
 /**
  * @function playSong
@@ -196,6 +206,29 @@
         currentBuzzObject.setVolume(volume);
       }
     };
+    
+/**
+ * @function muteVolumeToggle
+ * @desc Sets the volume level to either 0 or prior volume level
+ * @param {Number} volume
+ */
+    SongPlayer.muteVolumeToggle = function(volume) {
+      
+      // either set volume to zero or restore to prior volume
+      
+      if (volume > 0) {
+        SongPlayer.preMuteVolume = volume;
+        if (currentBuzzObject) {
+          SongPlayer.volume = 0;
+          currentBuzzObject.setVolume(0);
+        }
+      } else if (volume == 0) {
+        SongPlayer.volume = SongPlayer.preMuteVolume;
+        if (currentBuzzObject) {
+          currentBuzzObject.setVolume(SongPlayer.volume);
+        }
+      }
+    }
     
     return SongPlayer;
   }
